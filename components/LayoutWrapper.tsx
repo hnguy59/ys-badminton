@@ -3,6 +3,7 @@ import { MAIN_CONTENT_MIN_HEIGHT } from '~/constant'
 import { Footer } from './Footer'
 import { Header } from './Header'
 import { MobileNav } from './MobileNav'
+import { Banner } from './Banner'
 
 export function LayoutWrapper({ children }) {
   let [navShow, setNavShow] = useState(false)
@@ -10,6 +11,7 @@ export function LayoutWrapper({ children }) {
 
   return (
     <>
+      <Banner />
       <MobileNav navShow={navShow} onToggleNav={onToggleNav} />
       <Header onToggleNav={onToggleNav} />
       <div className="mx-auto max-w-3xl px-3 sm:px-6 xl:max-w-5xl xl:px-0">
