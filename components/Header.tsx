@@ -13,7 +13,7 @@ export function Header({ onToggleNav }: { onToggleNav: () => void }) {
           <Link href="/" aria-label="Leo's Blog">
             <div className="flex items-center justify-between" data-umami-event="logo">
               <div className="mr-3 flex items-center justify-center">
-                <h1 className="transform text-4xl font-bold tracking-tight transition-all duration-300 hover:rotate-1 hover:scale-125 sm:text-4xl">
+                <h1 className="text-4xl font-bold tracking-tight transition-all duration-300 sm:text-4xl sm:hover:rotate-1 sm:hover:scale-125">
                   YS Badminton
                 </h1>
               </div>
