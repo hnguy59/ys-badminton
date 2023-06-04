@@ -2,6 +2,7 @@ import 'css/tailwind.css'
 import 'css/twemoji.css'
 
 import { ThemeProvider } from 'next-themes'
+import { FacebookProvider } from 'react-facebook'
 import Head from 'next/head'
 import { LayoutWrapper } from '~/components/LayoutWrapper'
 

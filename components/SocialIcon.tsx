@@ -6,6 +6,7 @@ import Linkedin from '~/icons/linkedin.svg'
 import Mail from '~/icons/mail.svg'
 import Twitter from '~/icons/twitter.svg'
 import Youtube from '~/icons/youtube.svg'
+import Instagram from '~/icons/instagram.svg'
 
 export let SocialIconsMap = {
   Mail,
@@ -14,6 +15,7 @@ export let SocialIconsMap = {
   Youtube,
   Linkedin,
   Twitter,
+  Instagram,
 }
 
 export function SocialIcon({ name, href }: SocialIconProps) {

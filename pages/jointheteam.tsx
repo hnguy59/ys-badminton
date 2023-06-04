@@ -3,6 +3,7 @@ import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { useState } from 'react'
+import { useForm } from 'react-hook-form'
 import { PageSeo } from '~/components/SEO'
 import { siteMetadata } from '~/data/siteMetadata'
 
@@ -35,6 +36,32 @@ const people = [
 
 export default function JoinTheTeam() {
   const [agreed, setAgreed] = useState(false)
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm()
+
+  const onSubmit = async (data) => {
+    console.log(data)
+    try {
+      const res = await fetch('/api/sendgrid', {
+        body: JSON.stringify({
+          email: data.email,
+          fullname: `${data.firstname} ${data.lastname}`,
+          subject: '[JOIN THE TEAM] - Join the team',
+          message: data.message,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        method: 'POST',
+      })
+      alert('sent')
+    } catch (e) {
+      console.error(e)
+    }
+  }
 
   return (
     <>
@@ -89,7 +116,7 @@ export default function JoinTheTeam() {
             Aute magna irure deserunt veniam aliqua magna enim voluptate.
           </p>
         </div>
-        <form action="#" method="POST" className="mx-auto mt-16 max-w-xl sm:mt-20">
+        <form onSubmit={handleSubmit(onSubmit)} className="mx-auto mt-16 max-w-xl sm:mt-20">
           <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
             <div>
               <label htmlFor="first-name" className="block text-sm font-semibold leading-6">
@@ -101,7 +128,12 @@ export default function JoinTheTeam() {
                   name="first-name"
                   id="first-name"
                   autoComplete="given-name"
-                  className="dark:bac block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 dark:bg-gray-800 dark:text-gray-100 dark:ring-indigo-600 dark:placeholder:text-gray-500 sm:text-sm sm:leading-6"
+                  placeholder="Kento"
+                  className={clsx(
+                    'dark:bac block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 dark:bg-gray-800 dark:text-gray-100 dark:ring-indigo-600 dark:placeholder:text-gray-500 sm:text-sm sm:leading-6',
+                    errors.firstName && 'ring-red-500 focus:ring-red-500 dark:ring-red-500'
+                  )}
+                  {...register('firstName', { required: true })}
                 />
               </div>
             </div>
@@ -115,21 +147,12 @@ export default function JoinTheTeam() {
                   name="last-name"
                   id="last-name"
                   autoComplete="family-name"
-                  className="dark:bac block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 dark:bg-gray-800 dark:text-gray-100 dark:ring-indigo-600 dark:placeholder:text-gray-500 sm:text-sm sm:leading-6"
-                />
-              </div>
-            </div>
-            <div className="sm:col-span-2">
-              <label htmlFor="company" className="block text-sm font-semibold leading-6">
-                Company
-              </label>
-              <div className="mt-2.5">
-                <input
-                  type="text"
-                  name="company"
-                  id="company"
-                  autoComplete="organization"
-                  className="dark:bac block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 dark:bg-gray-800 dark:text-gray-100 dark:ring-indigo-600 dark:placeholder:text-gray-500 sm:text-sm sm:leading-6"
+                  placeholder="Momota"
+                  className={clsx(
+                    'dark:bac block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 dark:bg-gray-800 dark:text-gray-100 dark:ring-indigo-600 dark:placeholder:text-gray-500 sm:text-sm sm:leading-6',
+                    errors.lastName && 'ring-red-500 focus:ring-red-500 dark:ring-red-500'
+                  )}
+                  {...register('lastName', { required: true })}
                 />
               </div>
             </div>
@@ -143,7 +166,12 @@ export default function JoinTheTeam() {
                   name="email"
                   id="email"
                   autoComplete="email"
-                  className="dark:bac block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 dark:bg-gray-800 dark:text-gray-100 dark:ring-indigo-600 dark:placeholder:text-gray-500 sm:text-sm sm:leading-6"
+                  placeholder="email@example.com"
+                  className={clsx(
+                    'dark:bac block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 dark:bg-gray-800 dark:text-gray-100 dark:ring-indigo-600 dark:placeholder:text-gray-500 sm:text-sm sm:leading-6',
+                    errors.email && 'ring-red-500 focus:ring-red-500 dark:ring-red-500'
+                  )}
+                  {...register('email', { required: true })}
                 />
               </div>
             </div>
@@ -157,7 +185,12 @@ export default function JoinTheTeam() {
                   name="phone-number"
                   id="phone-number"
                   autoComplete="tel"
-                  className="dark:bac block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 dark:bg-gray-800 dark:text-gray-100 dark:ring-indigo-600 dark:placeholder:text-gray-500 sm:text-sm sm:leading-6"
+                  placeholder="1234 567 890"
+                  className={clsx(
+                    'dark:bac block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 dark:bg-gray-800 dark:text-gray-100 dark:ring-indigo-600 dark:placeholder:text-gray-500 sm:text-sm sm:leading-6',
+                    errors.phoneNumber && 'ring-red-500 focus:ring-red-500 dark:ring-red-500'
+                  )}
+                  {...register('phoneNumber', { required: true })}
                 />
               </div>
             </div>
@@ -170,8 +203,13 @@ export default function JoinTheTeam() {
                   name="message"
                   id="message"
                   rows={4}
-                  className="block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 dark:bg-gray-800 dark:text-gray-100 dark:ring-indigo-600 dark:ring-indigo-600 dark:placeholder:text-gray-500 sm:text-sm sm:leading-6"
+                  placeholder="I want to join the team"
+                  className={clsx(
+                    'block w-full rounded-md border-0 px-3.5 py-2 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 dark:bg-gray-800 dark:text-gray-100 dark:ring-indigo-600 dark:placeholder:text-gray-500 sm:text-sm sm:leading-6',
+                    errors.message && 'ring-red-500 focus:ring-red-500 dark:ring-red-500'
+                  )}
                   defaultValue={''}
+                  {...register('message', { required: true })}
                 />
               </div>
             </div>
@@ -207,10 +245,11 @@ export default function JoinTheTeam() {
           </div>
           <div className="mt-10">
             <button
+              disabled
               type="submit"
               className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
             >
-              Let's talk
+              Submit application
             </button>
           </div>
         </form>

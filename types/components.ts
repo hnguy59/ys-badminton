@@ -1,7 +1,6 @@
 import type { ImageProps as NextImageProps } from 'next/image'
 import type React from 'react'
 import type { SocialIconsMap } from '~/components/SocialIcon'
-import type { projectsData } from '~/data/projectsData'
 import type { commentConfig } from '~/data/siteMetadata'
 import type { MdxFrontMatter, ReadingTime } from './mdx'
 
@@ -20,12 +19,6 @@ export interface SocialIconProps {
 
 export interface ImageProps extends NextImageProps {
   shouldOpenLightbox?: boolean
-}
-
-export type ProjectDataType = (typeof projectsData)[0]
-
-export interface ProjectCardProps {
-  project: ProjectDataType
 }
 
 export interface SocialButtonsProps {
