@@ -83,6 +83,10 @@ module.exports = {
         'zoom-in': 'zoom-in',
         'zoom-out': 'zoom-out',
       },
+      backgroundImage: {
+        'cover-image': "url('/static/images/cover-image.jpg')",
+        'ys-cover-image': "url('/static/images/ys-cover-image.jpg')",
+      },
       typography: (theme) => ({
         DEFAULT: {
           css: {

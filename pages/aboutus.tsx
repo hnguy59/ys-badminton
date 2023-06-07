@@ -26,10 +26,7 @@ const features = [
 export default function AboutUs() {
   return (
     <>
-      <PageSeo
-        title={`All posts - ${siteMetadata.author}`}
-        description={siteMetadata.description}
-      />
+      <PageSeo title={`YS Badminton - About Us`} description={siteMetadata.description} />
       {/* feature 1 */}
       <div className="overflow-hidden py-24 sm:py-32">
         <div

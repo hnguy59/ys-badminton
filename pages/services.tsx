@@ -13,10 +13,7 @@ const includedFeatures = [
 export default function Services() {
   return (
     <>
-      <PageSeo
-        title={`All posts - ${siteMetadata.author}`}
-        description={siteMetadata.description}
-      />
+      <PageSeo title={`YS Badminton - Services`} description={siteMetadata.description} />
       <div className="py-24 sm:py-32">
         <div
           className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"

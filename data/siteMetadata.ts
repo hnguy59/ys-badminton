@@ -11,11 +11,12 @@ export let siteMetadata = {
   siteLogo: '/static/images/logo.jpg',
   image: '/static/images/logo.jpg',
   socialBanner: '/static/images/logo.jpg',
-  email: 'riripishu@gmail.com',
+  email: 'ysbt.contact@gmail.com',
   github: 'https://github.com/hnguy59',
   twitter: '',
   facebook: 'https://www.facebook.com/YSBadmintonTraining',
   instagram: 'https://www.instagram.com/ysbadminton/',
+  phoneNumber: '+61452298126',
   youtube: '',
   linkedin: '',
   locale: 'en-AU',
@@ -24,11 +25,6 @@ export let siteMetadata = {
     simpleAnalytics: false, // true or false
     umamiWebsiteId: '', // e.g. 123e4567-e89b-12d3-a456-426614174000
     googleAnalyticsId: '', // e.g. UA-000000-2 or G-XXXXXXX
-  },
-  socialAccounts: {
-    github: 'hta218',
-    twitter: 'hta218_',
-    linkedin: 'hta218',
   },
 }
 

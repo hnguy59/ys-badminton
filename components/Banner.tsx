@@ -13,9 +13,9 @@ export function Banner() {
         isBannerShown ? 'translate-y-0 opacity-100' : '-translate-y-16 opacity-0'
       )}
     >
-      <div className="m-auto flex flex-wrap items-center gap-x-4 gap-y-2">
-        <p className="m-auto text-sm leading-6">
-          <strong className="font-semibold">GeneriCon 2023</strong>
+      <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
+        <p className="text-sm leading-6">
+          <strong className="font-semibold">Kids School Holiday Camp</strong>
           <svg
             viewBox="0 0 2 2"
             className="mx-2 inline h-0.5 w-0.5 fill-current"
@@ -23,19 +23,17 @@ export function Banner() {
           >
             <circle cx={1} cy={1} r={1} />
           </svg>
-          Join us in Denver from June 7 – 9 to see what’s coming next.
+          We look forward to seeing you and your child in the course!
         </p>
-      </div>
-      {/* <div className="flex flex-1 justify-end">
-        <button
-          type="button"
-          className="-m-3 p-3 focus-visible:outline-offset-[-4px]"
-          onClick={() => setIsBannerShown(false)}
+        <Link
+          href="https://www.facebook.com/YSBadmintonTraining/posts/pfbid02g9Xprd9dD1uK1qMJSkVS9FJJRtXY48UsX7DPi5M3r7gFJZkjWGDmAYEFchD8AWjMl"
+          target="_blank"
         >
-          <span className="sr-only">Dismiss</span>
-          <XMarkIcon className="h-5 w-5 " aria-hidden="true" />
-        </button>
-      </div> */}
+          <button className="border-spacing-5 rounded-full border border-gray-400 px-3 py-1.5 text-xs hover:border-gray-700 dark:hover:border-gray-200">
+            Find out more
+          </button>
+        </Link>
+      </div>
     </div>
   )
 }

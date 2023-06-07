@@ -34,3 +34,17 @@ Products
 - for future
 Events
 - for future
+
+FB: https://www.facebook.com/YSBadmintonTraining
+INST: https://www.instagram.com/ysbadminton/
+Email: ysbt.contact@gmail.com
+
+text whatever
+
+contact us form
+- Name
+- Message
+-> send these details to 0452298126
+
+
+TODO: TWILIO link mobile number (ph: +13613458966)
