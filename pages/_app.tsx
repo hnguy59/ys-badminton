@@ -6,6 +6,7 @@ import { ThemeProvider } from 'next-themes'
 import Head from 'next/head'
 import { LayoutWrapper } from '~/components/LayoutWrapper'
 import { ToastContainer } from 'react-toastify'
+import { Analytics } from '@vercel/analytics/react'
 
 export default function App({ Component, pageProps }) {
   return (
@@ -14,6 +15,7 @@ export default function App({ Component, pageProps }) {
         <meta content="width=device-width, initial-scale=1" name="viewport" />
       </Head>
       <LayoutWrapper>
+        <Analytics />
         <Component {...pageProps} />
         <ToastContainer />
       </LayoutWrapper>
