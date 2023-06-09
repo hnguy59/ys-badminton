@@ -1,38 +1,14 @@
+import { CircularProgress, Divider } from '@mui/material'
 import clsx from 'clsx'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'react-toastify'
 import { Image } from '~/components/Image'
 import { PageSeo } from '~/components/SEO'
 import { siteMetadata } from '~/data/siteMetadata'
 
-const people = [
-  {
-    name: 'Leslie Alexander',
-    role: 'Co-Founder / CEO',
-    imageUrl:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-  },
-  {
-    name: 'Leslie Alexander',
-    role: 'Co-Founder / CEO',
-    imageUrl:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-  },
-  {
-    name: 'Leslie Alexander',
-    role: 'Co-Founder / CEO',
-    imageUrl:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-  },
-  {
-    name: 'Leslie Alexander',
-    role: 'Co-Founder / CEO',
-    imageUrl:
-      'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
-  },
-]
-
 export default function JoinTheTeam() {
+  const [isLoading, setIsLoading] = useState(false)
   const {
     register,
     handleSubmit,
@@ -41,6 +17,7 @@ export default function JoinTheTeam() {
   } = useForm()
 
   const onSubmit = async (data) => {
+    setIsLoading(true)
     try {
       const res = await fetch('/api/sendgrid', {
         body: JSON.stringify({
@@ -57,6 +34,7 @@ export default function JoinTheTeam() {
     } catch (e) {
       console.error(e)
     } finally {
+      setIsLoading(false)
       reset()
       toast.success('Thank you for your interest. We will contact you soon.')
     }
@@ -71,8 +49,9 @@ export default function JoinTheTeam() {
           alt="cover image"
           width={2048}
           height={1536}
-          className="aspect-[25/5] w-full rounded-lg object-cover opacity-50"
+          className="aspect-[25/5] w-full rounded-lg object-cover"
         />
+        <Divider />
         <div className="isolate grid gap-16 px-4 sm:grid-cols-3 sm:px-0 lg:px-8">
           <div className="col-span-2">
             <h3 className="text-base font-semibold leading-7">
@@ -154,6 +133,7 @@ export default function JoinTheTeam() {
             ysbt.contact@gmail.com.
           </p>
         </div>
+        <Divider />
         <div className="isolate px-6 lg:px-8">
           <div
             className="absolute inset-x-0 top-[-10rem] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[-20rem]"
@@ -271,10 +251,11 @@ export default function JoinTheTeam() {
             </div>
             <div className="mt-10">
               <button
+                disabled={isLoading}
                 type="submit"
                 className="block w-full rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
-                Submit application
+                {isLoading ? <CircularProgress /> : <>Submit application</>}
               </button>
             </div>
           </form>

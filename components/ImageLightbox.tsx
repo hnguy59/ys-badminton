@@ -49,20 +49,12 @@ export function ImageLightbox({ src, closeLightbox }: ImageLightBoxProps) {
     <div
       role="button"
       tabIndex={0}
-      className="lightbox-overlay fixed inset-0 z-50 flex items-center justify-center bg-black transition-opacity duration-300 ease-out"
+      className="lightbox-overlay fixed inset-0 z-[99] flex items-center justify-center bg-black transition-opacity duration-300 ease-out"
       style={style}
       onClick={handleClose}
       onKeyDown={handleKeydown}
     >
       <div className="relative flex h-full w-full items-center justify-center">
-        <div className="absolute inset-x-0 top-0 flex justify-between">
-          <button className="p-4 text-xl text-white" onClick={handleClose}>
-            Esc
-          </button>
-          <button className="p-4" onClick={handleClose}>
-            <Twemoji emoji="cross-mark" />
-          </button>
-        </div>
         {/* eslint-disable @next/next/no-img-element */}
         <img
           src={src.toString()}

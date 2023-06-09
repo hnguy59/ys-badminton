@@ -1,51 +1,65 @@
 import { PageSeo } from '~/components/SEO'
 import { siteMetadata } from '~/data/siteMetadata'
 import { useState } from 'react'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
+import { ChevronDownIcon, PhoneIcon } from '@heroicons/react/20/solid'
 import { Switch } from '@headlessui/react'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { Image } from '~/components/Image'
 import { useForm } from 'react-hook-form'
 import { toast } from 'react-toastify'
+import { CircularProgress } from '@mui/material'
+import { SocialIcon } from '~/components/SocialIcon'
 
 const features = [
   {
-    name: 'Email',
+    name: (
+      <div className="flex gap-1">
+        <SocialIcon name="Mail" />
+        Email
+      </div>
+    ),
     description: (
-      <Link href="mailto:ysbt.contact@gmail.com" target="_blank" className="hover:underline">
+      <Link href={`mailto:${siteMetadata.email}`} target="_blank" className="hover:underline">
         ysbt.contact@gmail.com
       </Link>
     ),
   },
   {
-    name: 'Contact Number',
+    name: (
+      <div className="flex gap-1">
+        <PhoneIcon className="h-6 w-6 fill-current text-gray-700 hover:text-blue-500 dark:text-gray-200 dark:hover:text-blue-400" />
+        Contact Number
+      </div>
+    ),
     description: (
-      <Link href="tel:+0452 298 126" target="_blank" className="hover:underline">
+      <Link href={`tel:${siteMetadata.phoneNumber}`} target="_blank" className="hover:underline">
         0452 298 126
       </Link>
     ),
   },
   {
-    name: 'Facebook',
+    name: (
+      <div className="flex gap-1">
+        <SocialIcon name="Facebook" />
+        Facebook
+      </div>
+    ),
     description: (
-      <Link
-        href="https://facebook.com/YSBadmintonTraining"
-        target="_blank"
-        className="hover:underline"
-      >
+      <Link href={siteMetadata.facebook} target="_blank" className="hover:underline">
         YSBadmintonTraining
       </Link>
     ),
   },
   {
-    name: 'Instagram',
+    name: (
+      <div className="flex gap-1">
+        <SocialIcon name="Instagram" />
+        Instagram
+      </div>
+    ),
     description: (
-      <Link
-        href="https://www.instagram.com/ysbadminton/"
-        target="_blank"
-        className="hover:underline"
-      >
+      <Link href={siteMetadata.instagram} target="_blank" className="hover:underline">
         ysbadminton
       </Link>
     ),
@@ -54,6 +68,7 @@ const features = [
 
 export default function ContactUs() {
   const [isEnquireOnline, setIsEnquireOnline] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
 
   const {
     register,
@@ -73,6 +88,7 @@ export default function ContactUs() {
   }
 
   const onSubmit = async (data) => {
+    setIsLoading(true)
     try {
       const res = await fetch('/api/twilio', {
         body: JSON.stringify({ message: createMessage(data) }),
@@ -85,6 +101,7 @@ export default function ContactUs() {
       console.error(e)
     } finally {
       setIsEnquireOnline(false)
+      setIsLoading(false)
       reset()
       toast.success('Message Sent! We will get back to you as soon as possible')
     }
@@ -183,9 +200,10 @@ export default function ContactUs() {
                 <div className="mt-10 flex flex-col items-center gap-4">
                   <button
                     type="submit"
+                    disabled={isLoading}
                     className="block w-full flex-1 rounded-md bg-indigo-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                   >
-                    Submit application
+                    {isLoading ? <CircularProgress /> : <>Send</>}
                   </button>
                   <button
                     onClick={() => setIsEnquireOnline(false)}
@@ -204,8 +222,8 @@ export default function ContactUs() {
                 you. We're here to help and look forward to hearing from you soon!
               </p>
               <dl className="mb-16 mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
-                {features.map((feature) => (
-                  <div key={feature.name} className="border-t border-gray-200 pt-4">
+                {features.map((feature, i) => (
+                  <div key={i} className="border-t border-gray-200 pt-4">
                     <dt className="font-medium">{feature.name}</dt>
                     <dd className="mt-2 text-sm">{feature.description}</dd>
                   </div>

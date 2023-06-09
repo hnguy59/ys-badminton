@@ -1,11 +1,12 @@
 import { siteMetadata } from '~/data/siteMetadata'
 import { SocialIcon } from './SocialIcon'
 import { PhoneIcon } from '@heroicons/react/20/solid'
+import { Divider } from '@mui/material'
 
 export function Footer() {
   return (
     <footer>
-      <div className="mb-8 mt-16 items-center justify-between space-y-4 md:mb-10 md:flex md:space-y-0">
+      <div className="mb-8 mt-16 items-center justify-between space-y-4 border-t md:mb-10 md:flex md:space-y-0">
         <div className="my-2 flex space-x-2 text-sm text-gray-500 dark:text-gray-400">
           <SocialIcon name="Facebook" href={siteMetadata.facebook} />
           <SocialIcon name="Instagram" href={siteMetadata.instagram} />

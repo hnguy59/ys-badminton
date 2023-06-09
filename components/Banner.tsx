@@ -9,7 +9,7 @@ export function Banner() {
   return (
     <div
       className={clsx(
-        'relative isolate transform items-center gap-x-6 overflow-hidden border-b border-gray-200 px-6 py-2.5 text-center transition-all duration-200 dark:border-gray-700 sm:px-3.5 sm:before:flex-1',
+        'relative isolate z-50 transform items-center gap-x-6 overflow-hidden border-b border-gray-200 px-6 py-2.5 text-center transition-all duration-200 dark:border-gray-700 sm:px-3.5 sm:before:flex-1',
         isBannerShown ? 'translate-y-0 opacity-100' : '-translate-y-16 opacity-0'
       )}
     >

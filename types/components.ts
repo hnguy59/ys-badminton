@@ -14,7 +14,7 @@ export interface ImageLightBoxProps extends Pick<NextImageProps, 'src'> {
 
 export interface SocialIconProps {
   name: keyof typeof SocialIconsMap
-  href: string
+  href?: string
 }
 
 export interface ImageProps extends NextImageProps {
