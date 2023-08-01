@@ -48,3 +48,42 @@ contact us form
 
 
 TODO: TWILIO link mobile number (ph: +13613458966)
+
+
+### TODO
+YS BAMDINTON
+(Due - 6 weeks from 10/7/2022)
+
+- Take off picture from home page
+- Domain = ysbadminton.com
+- Banner = ‘Badminton Training | Badminton Products’ instead of Kids School Holiday Camp
+- Footer (copy Vsmash vsmashba.com)
+- Hero to 3/4 categories (home page volant volant.com, world gym)
+- Mega menu
+- 3rd party
+- Hero Image, (multiple image, scroll)
+- Category
+  - HOME
+  - TRAININGS
+    - Group Training (title + 3 side-by-side images)
+      - Kids Training
+      - School Holiday Camp Training
+      - Adults Training
+    - Private Training
+      - 1 on 1
+      - 1 on 2
+      - 1 on 3
+  - PRODUCTS
+    - YS
+    - Yonex
+    - Lining
+  - STRINGING (Photo + text)
+  - TEAM YS 
+    - Competition Players
+    - Coaches
+  - JOIN US
+  - ABOUT
+    - About us
+    - Our History
+    - Contact
+
