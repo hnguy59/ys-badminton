@@ -3,10 +3,7 @@ const colors = require('tailwindcss/colors')
 /** @type {import('tailwindcss').Config} */
 
 module.exports = {
-  content: [
-    './(components|constant|layouts|pages)/**/*.(ts|tsx)',
-    './data/(blog|snippets|authors)/*.mdx',
-  ],
+  content: ['./src/**/*.{html,ts,tsx,js,jsx}'],
   darkMode: 'class',
   theme: {
     extend: {
@@ -84,8 +81,8 @@ module.exports = {
         'zoom-out': 'zoom-out',
       },
       backgroundImage: {
-        'cover-image': "url('/static/images/cover-image.jpg')",
-        'ys-cover-image': "url('/static/images/ys-cover-image.jpg')",
+        'cover-image': "url('/images/cover-image.jpg')",
+        'ys-cover-image': "url('/images/ys-cover-image.jpg')",
       },
       typography: (theme) => ({
         DEFAULT: {

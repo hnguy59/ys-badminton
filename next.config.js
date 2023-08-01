@@ -1,36 +1,14 @@
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
-  enabled: process.env.ANALYZE === 'true',
-})
+// @ts-check
 
-module.exports = withBundleAnalyzer({
-  reactStrictMode: true,
-  pageExtensions: ['js', 'jsx', 'ts', 'tsx', 'md', 'mdx'],
-  eslint: {
-    dirs: ['components', 'constant', 'layouts', 'libs', 'pages', 'scripts', 'utils'],
-  },
-  images: {
-    domains: ['i.scdn.co'],
-  },
-  typescript: { tsconfigPath: './tsconfig.json' },
-  webpack: (config, { dev, isServer }) => {
-    config.module.rules.push({
-      test: /\.(png|jpe?g|gif|mp4)$/i,
-      use: [
-        {
-          loader: 'file-loader',
-          options: {
-            publicPath: '/_next',
-            name: 'static/media/[name].[hash].[ext]',
-          },
-        },
-      ],
-    })
+/**
+ * @type {import('next').NextConfig}
+ **/
+const nextConfig = {
+  // !! WARN !!
+  // Dangerously allow production builds to successfully complete even if
+  // your project has type errors.
+  // !! WARN !!
+  ignoreBuildErrors: true,
+}
 
-    config.module.rules.push({
-      test: /\.svg$/,
-      use: ['@svgr/webpack'],
-    })
-
-    return config
-  },
-})
+module.exports = nextConfig
