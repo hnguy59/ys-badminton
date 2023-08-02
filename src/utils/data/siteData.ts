@@ -1,4 +1,29 @@
-export const siteData: Record<string, any> = {
+export interface ISiteData {
+  name: string
+  title: string
+  author: string
+  fullName: string
+  language: string
+  siteUrl: string
+  siteRepo: string
+  siteLogo: string
+  locale: string
+  social: {
+    phoneNumber: string
+    email: string
+    twitter: string
+    facebook: string
+    instagram: string
+  }
+  banner: {
+    title: string
+    description: string
+    link?: string
+  }
+}
+
+export const siteData: ISiteData = {
+  name: 'YS Badminton',
   title: 'YS Badminton - We play the best',
   author: 'Henry Nguyen',
   fullName: 'Henry Shi Jia Nguyen',
@@ -15,9 +40,8 @@ export const siteData: Record<string, any> = {
     instagram: 'https://www.instagram.com/ysbadminton/',
   },
   banner: {
-    title: 'Kids School Holiday Camp',
+    title: 'Badminton Training | Badminton Products',
     description: 'We look forward to seeing you and your child in the course!',
-    link: 'https://www.facebook.com/YSBadmintonTraining/posts/pfbid02g9Xprd9dD1uK1qMJSkVS9FJJRtXY48UsX7DPi5M3r7gFJZkjWGDmAYEFchD8AWjMl',
   },
 }
 

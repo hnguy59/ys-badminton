@@ -3,6 +3,7 @@ import { ThemeSwitcher } from '../ThemeSwitcher'
 import clsx from 'clsx'
 import { headerNavLinks } from '~/utils/data/siteData'
 import { useRouter } from 'next/router'
+import { MegaMenu } from '../megamenu/MegaMenu'
 
 export function Header({ onToggleNav }: { onToggleNav: () => void }) {
   const router = useRouter()
@@ -22,7 +23,7 @@ export function Header({ onToggleNav }: { onToggleNav: () => void }) {
           </Link>
         </div>
         <div className="flex items-center text-base leading-5">
-          <div className="hidden space-x-2 sm:block">
+          {/* <div className="hidden space-x-2 sm:block">
             {headerNavLinks.map((link) => {
               const className = clsx(
                 'inline-block rounded font-medium text-gray-900 dark:text-gray-100 py-1 px-2 sm:py-2 sm:px-3',
@@ -36,7 +37,8 @@ export function Header({ onToggleNav }: { onToggleNav: () => void }) {
                 </Link>
               )
             })}
-          </div>
+          </div> */}
+          <MegaMenu />
           <ThemeSwitcher />
           <button
             className="ml-2 mr-1 h-8 w-8 rounded sm:hidden"

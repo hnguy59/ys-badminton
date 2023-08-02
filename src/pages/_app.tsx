@@ -13,6 +13,7 @@ export default function App({ Component, pageProps }) {
     <ThemeProvider attribute="class">
       <Head>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <title>YS Badminton - We play the best.</title>
       </Head>
       <LayoutWrapper>
         <Analytics />

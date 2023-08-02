@@ -4,9 +4,7 @@ import { siteData } from '~/utils/data/siteData'
 import { useState } from 'react'
 
 export function Banner() {
-  const {
-    banner: { title, description, link },
-  } = siteData
+  const { banner: data } = siteData
   const [isBannerShown, setIsBannerShown] = useState(true)
 
   return (
@@ -18,7 +16,7 @@ export function Banner() {
     >
       <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
         <p className="text-sm leading-6">
-          <strong className="font-semibold">{title}</strong>
+          <strong className="font-semibold">{data.title}</strong>
           <svg
             viewBox="0 0 2 2"
             className="mx-2 inline h-0.5 w-0.5 fill-current"
@@ -26,13 +24,15 @@ export function Banner() {
           >
             <circle cx={1} cy={1} r={1} />
           </svg>
-          {description}
+          {data.description}
         </p>
-        <Link href={link} target="_blank">
-          <button className="border-spacing-5 rounded-full border border-gray-400 px-3 py-1.5 text-xs hover:border-gray-700 dark:hover:border-gray-200">
-            Find out more
-          </button>
-        </Link>
+        {data.link ? (
+          <Link href={data.link} target="_blank">
+            <button className="border-spacing-5 rounded-full border border-gray-400 px-3 py-1.5 text-xs hover:border-gray-700 dark:hover:border-gray-200">
+              Find out more
+            </button>
+          </Link>
+        ) : null}
       </div>
     </div>
   )

@@ -5,31 +5,6 @@
 https://ylrealty.com.au/contact-us
 volantbadminton.com
 
-Change logo to Ys badminton
-Home
-- picture
-- more like volant badminton
-- training programs heading
-- 3 big categories click go to more info
-- news/updates from Facebook/instagram
-- copy footer
-- 
-About us
-- click in 
-Services
-- training categories explain
-- picture + text on side, click to go to main page
-Contact us
-- contact info
-- social media website email
-Join us
-- collect basic info when fill out form
-- name form email category of training
-- collect by email
-- hard coded
-- basic info + legal
-- join our training
-- join our team
 Products
 - for future
 Events
@@ -56,8 +31,8 @@ YS BAMDINTON
 
 - Take off picture from home page
 - Domain = ysbadminton.com
-- Banner = ‘Badminton Training | Badminton Products’ instead of Kids School Holiday Camp
-- Footer (copy Vsmash vsmashba.com)
+(DONE) Banner = ‘Badminton Training | Badminton Products’ instead of Kids School Holiday Camp
+(DONE) Footer (copy Vsmash vsmashba.com)
 - Hero to 3/4 categories (home page volant volant.com, world gym)
 - Mega menu
 - 3rd party
