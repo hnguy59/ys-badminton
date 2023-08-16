@@ -71,11 +71,13 @@ export function MegaMenu({ megaMenuData, topPosition, ...props }: MegaMenuProps)
                     {item.title}
                     <ExpandMore />
                   </span>
-                  <MegaMenuDropdown
-                    megaMenuData={megaMenuData}
-                    topPosition={topPosition}
-                    activeMenu={activeMenu}
-                  />
+                  {activeMenu === item.id && (
+                    <MegaMenuDropdown
+                      megaMenuData={megaMenuData}
+                      topPosition={topPosition}
+                      activeMenu={activeMenu}
+                    />
+                  )}
                 </li>
               )
             }

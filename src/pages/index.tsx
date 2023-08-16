@@ -1,6 +1,6 @@
 import { Group, Lightbulb, PlayCircle, WavingHand } from '@mui/icons-material'
 
-import { Image } from '~/components/Image'
+import Image from 'next/image'
 import Link from 'next/link'
 
 const features = [

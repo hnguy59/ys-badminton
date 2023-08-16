@@ -29,12 +29,12 @@ TODO: TWILIO link mobile number (ph: +13613458966)
 YS BAMDINTON
 (Due - 6 weeks from 10/7/2022)
 
-- Take off picture from home page
+(DONE) Take off picture from home page
 - Domain = ysbadminton.com
 (DONE) Banner = ‘Badminton Training | Badminton Products’ instead of Kids School Holiday Camp
 (DONE) Footer (copy Vsmash vsmashba.com)
 - Hero to 3/4 categories (home page volant volant.com, world gym)
-- Mega menu
+(DONE) Mega menu
 - 3rd party
 - Hero Image, (multiple image, scroll)
 - Category

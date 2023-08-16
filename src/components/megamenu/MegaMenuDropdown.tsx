@@ -2,6 +2,7 @@ import { ChevronRight, ExpandMore } from '@mui/icons-material'
 import { HTMLProps, ReactElement, useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import { IMegaMenu } from './MegaMenu'
+import Image from 'next/image'
 import { Link } from '../Link'
 import clsx from 'clsx'
 import { useMegaMenuDropdown } from './hook/useMegaMenuDropdown'
@@ -92,7 +93,15 @@ export function MegaMenuDropdown({ megaMenuData, topPosition, activeMenu }: Mega
           </div>
           <div className="w-[50%]">{activeSubMenuElement}</div>
         </div>
-        <div className="flex w-full flex-1 items-start">image</div>
+        <div className="flex w-full flex-1 items-start">
+          <Image
+            src="/images/ys-cover-image.jpg"
+            alt="ys-cover-image"
+            width={2048}
+            height={1365}
+            className="rounded-xl"
+          />
+        </div>
       </div>
     </div>
   )

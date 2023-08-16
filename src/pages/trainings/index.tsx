@@ -128,7 +128,7 @@ export default function Services() {
             </div>
           </div>
           <div className="mx-auto mt-12 flex flex-col gap-6 sm:text-left">
-            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">const us help you</h2>
+            <h2 className="text-2xl font-bold tracking-tight sm:text-3xl">Let us help you</h2>
             <p className="text-lg leading-8">
               For personalized assistance and to discover the best coaching option that suits your
               needs, please feel free to contact us. Our team is dedicated to providing you with the
