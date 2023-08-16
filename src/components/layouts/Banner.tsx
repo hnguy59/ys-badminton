@@ -5,13 +5,11 @@ import { useState } from 'react'
 
 export function Banner() {
   const { banner: data } = siteData
-  const [isBannerShown, setIsBannerShown] = useState(true)
 
   return (
     <div
       className={clsx(
-        'relative isolate z-50 transform items-center gap-x-6 overflow-hidden border-b border-gray-200 px-6 py-2.5 text-center transition-all duration-200 dark:border-gray-700 sm:px-3.5 sm:before:flex-1',
-        isBannerShown ? 'translate-y-0 opacity-100' : '-translate-y-16 opacity-0'
+        'relative isolate z-50 transform items-center gap-x-6 overflow-hidden border-b border-gray-200 translate-y-0 opacity-100 bg-white px-6 py-2.5 text-center transition-all duration-200 dark:border-gray-700 dark:bg-dark sm:px-3.5 sm:before:flex-1',
       )}
     >
       <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">

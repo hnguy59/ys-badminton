@@ -1,6 +1,6 @@
-import { Email, Facebook, Instagram, Phone, WhatsApp, YouTube, NearMe } from '@mui/icons-material'
-import Image from 'next/image'
+import { Email, Facebook, Instagram, NearMe, Phone, WhatsApp, YouTube } from '@mui/icons-material'
 
+import Image from 'next/image'
 import { siteData } from '~/utils/data/siteData'
 
 export function Footer() {
@@ -11,10 +11,10 @@ export function Footer() {
   } = siteData
 
   return (
-    <footer>
+    <footer className="mx-auto max-w-3xl px-3 sm:px-6 xl:max-w-5xl xl:px-0">
       <div className="mt-8 space-y-4 border-t py-8 md:flex md:flex-col md:gap-2 md:space-y-0">
         <div className="flex flex-wrap justify-between gap-4">
-          <div className="mx-4 flex flex-grow flex-col">
+          <div className="mx-4 flex flex-grow flex-col items-start">
             <div className="text-xl font-bold">Socials</div>
             <div className="my-2 flex space-x-2 text-sm ">
               <Facebook
@@ -39,7 +39,7 @@ export function Footer() {
               />
             </div>
           </div>
-          <div className="mx-4 flex flex-grow flex-col">
+          <div className="mx-4 flex flex-grow flex-col items-start">
             <div className="text-xl font-bold">Help Center</div>
             <ul>
               <li>Frequently Asked Questions (FAQs)</li>
@@ -48,7 +48,7 @@ export function Footer() {
               <li>Contact Us</li>
             </ul>
           </div>
-          <div className="mx-4 flex flex-grow flex-col">
+          <div className="mx-4 flex flex-grow flex-col items-start">
             <div className="text-xl font-bold">Contact Information</div>
             <ul>
               <li>
@@ -65,14 +65,12 @@ export function Footer() {
             </ul>
           </div>
         </div>
-        <div>
-          <div className="my-2 flex flex-wrap items-center space-x-2 text-sm text-gray-500 dark:text-gray-400">
-            <div>{`Copyright © ${new Date().getFullYear()}`}</div>
-            <span>{` • `}</span>
-            <span className="text-md font-semibold">{name}</span>
-            <span>{` • `}</span>
-            <span>All Rights Reserved</span>
-          </div>
+        <div className="my-2 flex flex-wrap justify-end space-x-2 text-sm text-gray-500 dark:text-gray-400">
+          <div>{`Copyright © ${new Date().getFullYear()}`}</div>
+          <span>{` • `}</span>
+          <span className="text-md font-semibold">{name}</span>
+          <span>{` • `}</span>
+          <span>All Rights Reserved</span>
         </div>
       </div>
     </footer>

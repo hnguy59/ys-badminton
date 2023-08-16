@@ -1,6 +1,5 @@
 import { Link } from '../Link'
 import clsx from 'clsx'
-import { headerNavLinks } from '~/utils/data/siteData'
 
 export function MobileNav({ navShow, onToggleNav }) {
   const className = clsx(
@@ -29,7 +28,7 @@ export function MobileNav({ navShow, onToggleNav }) {
         </svg>
       </button>
       <nav className="fixed mt-8 h-full">
-        {headerNavLinks.map((link) => (
+        {/* {headerNavLinks.map((link) => (
           <div key={link.title} className="px-8 py-4">
             <Link
               href={link.href}
@@ -39,7 +38,7 @@ export function MobileNav({ navShow, onToggleNav }) {
               {link.title}
             </Link>
           </div>
-        ))}
+        ))} */}
       </nav>
     </div>
   )

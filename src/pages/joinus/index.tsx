@@ -6,7 +6,7 @@ import { toast } from 'react-toastify'
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
 
-export default function JoinTheTeam() {
+export default function JoinUs() {
   const [isLoading, setIsLoading] = useState(false)
   const {
     register,

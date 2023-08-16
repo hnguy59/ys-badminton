@@ -16,9 +16,9 @@ export function LayoutWrapper({ children }) {
       <div className="mx-auto max-w-3xl px-3 sm:px-6 xl:max-w-5xl xl:px-0">
         <div className="flex flex-col justify-between">
           <main>{children}</main>
-          <Footer />
         </div>
       </div>
+      <Footer />
     </>
   )
 }

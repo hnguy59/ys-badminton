@@ -1,16 +1,46 @@
+import { useEffect, useRef, useState } from 'react'
+
 import { Link } from '../Link'
-import { ThemeSwitcher } from '../ThemeSwitcher'
-import clsx from 'clsx'
-import { headerNavLinks } from '~/utils/data/siteData'
-import { useRouter } from 'next/router'
 import { MegaMenu } from '../megamenu/MegaMenu'
+import { ThemeSwitcher } from '../ThemeSwitcher'
+import { megaMenuData } from '../../utils/data/siteData'
 
 export function Header({ onToggleNav }: { onToggleNav: () => void }) {
-  const router = useRouter()
+  const [topPosition, setTopPosition] = useState<number>()
+  const headerRef = useRef<HTMLDivElement | null>(null)
+
+  useEffect(() => {
+    // Function to update the bottom distance
+    const updateTopPosition = () => {
+      if (headerRef.current) {
+        const rect = headerRef.current.getBoundingClientRect()
+        const topPosition = rect.bottom
+        setTopPosition(topPosition)
+      }
+    }
+
+    // Initial bottom distance update
+    updateTopPosition()
+
+    // Event listener to update distance on window resize
+    const handleResize = () => {
+      updateTopPosition()
+    }
+
+    window.addEventListener('scroll', handleResize)
+
+    // Clean up the event listener on unmount
+    return () => {
+      window.removeEventListener('scroll', handleResize)
+    }
+  }, [])
 
   return (
-    <header className="supports-backdrop-blur:bg-white/95 sticky top-0 z-40 overflow-x-hidden  bg-white/0 py-3 backdrop-blur dark:bg-dark/0">
-      <div className="mx-auto flex max-w-3xl items-center justify-between px-3 xl:max-w-5xl xl:px-0">
+    <header
+      ref={headerRef}
+      className="sticky top-0 z-40 overflow-x-hidden border-b border-gray-200 bg-white/75 dark:border-gray-700 dark:bg-dark/75"
+    >
+      <div className="mx-auto flex max-w-3xl items-center justify-between px-3 py-3 xl:max-w-5xl xl:px-0">
         <div>
           <Link href="/">
             <div className="flex items-center justify-between">
@@ -23,22 +53,7 @@ export function Header({ onToggleNav }: { onToggleNav: () => void }) {
           </Link>
         </div>
         <div className="flex items-center text-base leading-5">
-          {/* <div className="hidden space-x-2 sm:block">
-            {headerNavLinks.map((link) => {
-              const className = clsx(
-                'inline-block rounded font-medium text-gray-900 dark:text-gray-100 py-1 px-2 sm:py-2 sm:px-3',
-                router.pathname === link.href
-                  ? 'bg-gray-200/50 dark:bg-gray-700/50'
-                  : 'hover:bg-gray-200/50 dark:hover:bg-gray-700/50'
-              )
-              return (
-                <Link key={link.title} href={link.href}>
-                  <span className={className}>{link.title}</span>
-                </Link>
-              )
-            })}
-          </div> */}
-          <MegaMenu />
+          <MegaMenu megaMenuData={megaMenuData} topPosition={topPosition} />
           <ThemeSwitcher />
           <button
             className="ml-2 mr-1 h-8 w-8 rounded sm:hidden"

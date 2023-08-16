@@ -64,7 +64,7 @@ const features = [
   },
 ]
 
-export default function ContactUs() {
+export default function Contact() {
   const [isEnquireOnline, setIsEnquireOnline] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
 
