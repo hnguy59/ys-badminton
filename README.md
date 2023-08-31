@@ -62,3 +62,53 @@ YS BAMDINTON
     - Our History
     - Contact
 
+### TODO UPDATE
+(2 weeks from 30/8)
+PRODUCT
+
+- Remove products and all children
+
+HOME PAGE
+
+- Welcome + hero image photo
+  - We play the best. -> we push the limit
+- 2 buttons side by side (private training, group training) (goes to page)
+- Similar to vSmashba.com
+- (Where talents gather) -> we push the limit
+- Our badminton court -> This is our social
+- Our customer -> current instagram posts (recent 3)
+
+MEGA MENU
+
+- Remove view Trainings
+- Remove children/children of group/private training
+
+TRAININGS
+
+- Type training #1
+  - Title
+  - Time
+  - Description
+  - Enquiry
+- Type training #2
+- Private training
+  -
+
+STRINGING
+
+- Change to Social
+- Format
+  - Location
+  - Time
+  - Descipriton
+  - Enquiry
+
+TEAM YS
+
+- Our Coaches (option)
+- Our Staff (option)
+
+JOIN US
+
+- About hiring, interest in joining
+- CV section
