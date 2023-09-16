@@ -114,7 +114,7 @@ export default function Home() {
           {/* SOCIALS */}
           <div
             id="socials"
-            className="flex flex-col items-center justify-center gap-8 rounded bg-pink-50 dark:bg-dark px-6 py-6 lg:px-8"
+            className="flex flex-col items-center justify-center gap-8 rounded bg-pink-50 px-6 py-6 dark:bg-dark lg:px-8"
           >
             <h2 className="text-center text-[38px] font-black leading-[45px]">Socials</h2>
             <p className="text-center text-[20px]">
@@ -136,7 +136,7 @@ export default function Home() {
             <h2 className="text-center text-[38px] font-black leading-[45px]">Follow us</h2>
             <div className="flex flex-row gap-6">
               {instagramSocialData.map((post) => (
-                <InstagramPost key={post.href} href={post.href} />
+                <InstagramPost key={post.href} href={post.href} hasCaption={true} />
               ))}
             </div>
           </div>
