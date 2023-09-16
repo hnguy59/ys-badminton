@@ -1,5 +1,6 @@
 import { FeatureCardGroup } from '../../components/FeatureCardGroup'
 import { privateTrainingData } from '../../utils/data/siteData'
+
 export default function Private() {
   return (
     <FeatureCardGroup

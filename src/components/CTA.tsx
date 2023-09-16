@@ -1,4 +1,5 @@
 import Link from 'next/link'
+
 export function CTA() {
   return (
     <div id="our-contact" className="mt-24 rounded-lg bg-purple-100 p-6 dark:bg-purple-700">

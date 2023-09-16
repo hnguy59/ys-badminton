@@ -1,5 +1,5 @@
-import { ChevronRight, ExpandMore } from '@mui/icons-material'
-import { HTMLProps, ReactElement, useCallback, useEffect, useMemo, useRef, useState } from 'react'
+import { ChevronRight } from '@mui/icons-material'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import { IMegaMenu } from './MegaMenu'
 import Image from 'next/image'
@@ -52,7 +52,7 @@ export function MegaMenuDropdown({ megaMenuData, topPosition, activeMenu }: Mega
       <div className="mx-auto flex max-w-3xl items-start justify-between px-3 py-3 xl:max-w-5xl xl:px-0">
         <div className="flex w-full flex-[2] flex-row">
           <div className="flex w-[50%] flex-col">
-            {activeMegaMenu.children.map((item) => {
+            {activeMegaMenu.children?.map((item) => {
               const className = clsx(
                 'inline-block flex items-center w-full rounded font-lg text-gray-900 hover:cursor-pointer dark:text-gray-100 py-1 px-2 sm:py-2 sm:px-3',
                 router.pathname === item.link

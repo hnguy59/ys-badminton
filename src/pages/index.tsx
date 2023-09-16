@@ -11,7 +11,7 @@ export default function Home() {
   // const contentStartTop = useMemo(() => heroRef.current?.offsetHeight, [heroRef])
 
   useEffect(() => {
-    setContentStartTop(heroRef.current.offsetHeight)
+    setContentStartTop(heroRef?.current?.offsetHeight)
   }, [heroRef])
 
   return (
@@ -143,7 +143,7 @@ export default function Home() {
           <CTA />
         </>
       ) : (
-        loading
+        <>loading</>
       )}
     </>
   )

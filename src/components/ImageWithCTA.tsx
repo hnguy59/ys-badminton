@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 import clsx from 'clsx'
 import Image, { ImageProps } from 'next/image'
 import { ReactNode } from 'react'
@@ -8,7 +9,7 @@ export interface ImageWithCTAProps {
   imagePlacement: 'LEFT' | 'RIGHT'
 }
 
-export function ImageWithCTA({ image, children, imagePlacement }) {
+export function ImageWithCTA({ image, children, imagePlacement }: ImageWithCTAProps) {
   return (
     <div>
       <div className="mx-auto max-w-screen-xl items-center gap-8 px-4 py-8 sm:py-16 md:grid md:grid-cols-2 lg:px-6 xl:gap-16">

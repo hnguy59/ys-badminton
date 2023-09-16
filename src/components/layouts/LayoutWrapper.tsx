@@ -2,9 +2,9 @@ import { Banner } from './Banner'
 import { Footer } from './Footer'
 import { Header } from './Header'
 import { MobileNav } from './MobileNav'
-import { useState } from 'react'
+import { ReactNode, useState } from 'react'
 
-export function LayoutWrapper({ children }) {
+export function LayoutWrapper({ children }: { children: ReactNode }) {
   const [navShow, setNavShow] = useState(false)
   const onToggleNav = () => setNavShow((status) => !status)
 

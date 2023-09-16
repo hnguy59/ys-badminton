@@ -1,10 +1,18 @@
 import { CircularProgress, Divider } from '@mui/material'
 
-import { Image } from '~/components/Image'
 import clsx from 'clsx'
 import { toast } from 'react-toastify'
-import { useForm } from 'react-hook-form'
+import { SubmitHandler, useForm } from 'react-hook-form'
 import { useState } from 'react'
+import { Image } from '../../components/Image'
+
+interface FormValues {
+  email: string;
+  firstName: string;
+  lastName: string
+  phoneNumber: string;
+  message: string;
+}
 
 export default function JoinUs() {
   const [isLoading, setIsLoading] = useState(false)
@@ -13,17 +21,17 @@ export default function JoinUs() {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm()
+  } = useForm<FormValues>()
 
-  const onSubmit = async (data) => {
+  const onSubmit: SubmitHandler<FormValues> = async (data) => {
     setIsLoading(true)
     try {
-      const res = await fetch('/api/sendgrid', {
+      await fetch('/api/sendgrid', {
         body: JSON.stringify({
           email: data.email,
-          fullname: `${data.firstname} ${data.lastname}`,
+          fullname: `${data.firstName} ${data.lastName}`,
           subject: '[JOIN THE TEAM] - Join the team',
-          ...data,
+          message: data.message,
         }),
         headers: {
           'Content-Type': 'application/json',
@@ -111,7 +119,7 @@ export default function JoinUs() {
                     <li>
                       Maintain a high level of personal and professional presentation at all times.
                     </li>
-                    <li>Be positive in support of the team's culture.</li>
+                    <li>Be positive in support of the teams culture.</li>
                   </ul>
                 </dd>
               </div>
@@ -158,7 +166,6 @@ export default function JoinUs() {
                 <div className="mt-2.5">
                   <input
                     type="text"
-                    name="first-name"
                     id="first-name"
                     autoComplete="given-name"
                     placeholder="Kento"
@@ -177,7 +184,6 @@ export default function JoinUs() {
                 <div className="mt-2.5">
                   <input
                     type="text"
-                    name="last-name"
                     id="last-name"
                     autoComplete="family-name"
                     placeholder="Momota"
@@ -196,7 +202,6 @@ export default function JoinUs() {
                 <div className="mt-2.5">
                   <input
                     type="email"
-                    name="email"
                     id="email"
                     autoComplete="email"
                     placeholder="email@example.com"
@@ -215,7 +220,6 @@ export default function JoinUs() {
                 <div className="relative mt-2.5">
                   <input
                     type="tel"
-                    name="phone-number"
                     id="phone-number"
                     autoComplete="tel"
                     placeholder="04XX XXX XXX"
@@ -233,7 +237,6 @@ export default function JoinUs() {
                 </label>
                 <div className="mt-2.5">
                   <textarea
-                    name="message"
                     id="message"
                     rows={4}
                     placeholder="I want to join the team"

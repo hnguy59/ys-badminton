@@ -32,7 +32,7 @@ export default function Services() {
               <div className="flex flex-col justify-between p-8 sm:p-10 lg:flex-auto">
                 <h3 className="text-2xl font-bold tracking-tight">One-on-One Coaching</h3>
                 <p className="mt-6 text-justify text-base leading-7">
-                  Offering personalized training sessions tailored to individual players' specific
+                  Offering personalized training sessions tailored to individual players specific
                   needs and goals, providing focused attention and customized guidance for maximum
                   improvement.
                 </p>

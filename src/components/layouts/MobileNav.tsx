@@ -1,7 +1,12 @@
-import { Link } from '../Link'
 import clsx from 'clsx'
+import { MouseEventHandler } from 'react'
 
-export function MobileNav({ navShow, onToggleNav }) {
+interface MobilNavProps {
+  navShow: boolean
+  onToggleNav: MouseEventHandler<HTMLButtonElement>
+}
+
+export function MobileNav({ navShow, onToggleNav }: MobilNavProps) {
   const className = clsx(
     `sm:hidden fixed w-full h-screen inset-0 bg-gray-200 dark:bg-gray-800 opacity-1 z-50 transition-transform transform ease-in-out duration-300`,
     navShow ? 'translate-x-0' : 'translate-x-full'

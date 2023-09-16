@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import clsx from 'clsx'
-import { siteData } from '~/utils/data/siteData'
-import { useState } from 'react'
+import { siteData } from '../../utils/data/siteData'
 
 export function Banner() {
   const { banner: data } = siteData
@@ -9,7 +8,7 @@ export function Banner() {
   return (
     <div
       className={clsx(
-        'relative isolate z-50 transform items-center gap-x-6 overflow-hidden border-b border-gray-200 translate-y-0 opacity-100 bg-white px-6 py-2.5 text-center transition-all duration-200 dark:border-gray-700 dark:bg-dark sm:px-3.5 sm:before:flex-1',
+        'relative isolate z-50 translate-y-0 transform items-center gap-x-6 overflow-hidden border-b border-gray-200 bg-white px-6 py-2.5 text-center opacity-100 transition-all duration-200 dark:border-gray-700 dark:bg-dark sm:px-3.5 sm:before:flex-1'
       )}
     >
       <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">

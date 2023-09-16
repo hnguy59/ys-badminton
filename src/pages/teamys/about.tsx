@@ -133,7 +133,7 @@ export default function AboutUs() {
         className="mt-24 flex flex-col items-center justify-center gap-8 px-6 lg:px-8"
       >
         <h2 className="text-center text-[38px] font-black leading-[45px]">
-          It's all about our people
+          It is all about our people
         </h2>
         <p className="text-center text-[20px]">
           The team behind YS Badminton is what drives our vision to inspire and empower individuals

@@ -6,7 +6,7 @@ import Link from 'next/link'
 import clsx from 'clsx'
 import { siteData } from '../../utils/data/siteData'
 import { toast } from 'react-toastify'
-import { useForm } from 'react-hook-form'
+import { SubmitHandler, useForm } from 'react-hook-form'
 import { useState } from 'react'
 
 const features = [
@@ -64,6 +64,13 @@ const features = [
   },
 ]
 
+type FormValues = {
+  name: string;
+  email: string; phoneNumber: string;
+  message: string;
+
+}
+
 export default function Contact() {
   const [isEnquireOnline, setIsEnquireOnline] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
@@ -73,9 +80,9 @@ export default function Contact() {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm()
+  } = useForm<FormValues>()
 
-  const createMessage = (data) => {
+  const createMessage = (data: FormValues) => {
     return `YS Badminton Contact Form
     ---------------------
     Name: ${data.name}
@@ -85,10 +92,10 @@ export default function Contact() {
     ---------------------`
   }
 
-  const onSubmit = async (data) => {
+  const onSubmit: SubmitHandler<FormValues> = async (data) => {
     setIsLoading(true)
     try {
-      const res = await fetch('/api/twilio', {
+       await fetch('/api/twilio', {
         body: JSON.stringify({ message: createMessage(data) }),
         headers: {
           'Content-Type': 'application/json',
@@ -111,7 +118,7 @@ export default function Contact() {
         <div className="mx-auto grid max-w-2xl grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-6 sm:px-6 sm:py-12 lg:max-w-7xl lg:grid-cols-2 lg:px-8">
           {isEnquireOnline ? (
             <div key="enquire-now" className="transition">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Let's Connect!</h2>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Lets Connect!</h2>
               <form onSubmit={handleSubmit(onSubmit)} className="mx-auto mt-4 max-w-xl">
                 <div className="grid grid-cols-1 gap-x-8 gap-y-6 sm:grid-cols-2">
                   <div className="sm:col-span-2">
@@ -121,13 +128,12 @@ export default function Contact() {
                     <div className="mt-2.5">
                       <input
                         type="text"
-                        name="name"
                         id="name"
                         autoComplete="name"
                         placeholder="Kento"
                         className={clsx(
                           'dark:bac block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 dark:bg-gray-800 dark:text-gray-100 dark:ring-indigo-600 dark:placeholder:text-gray-500 sm:text-sm sm:leading-6',
-                          errors.firstName && 'ring-red-500 focus:ring-red-500 dark:ring-red-500'
+                          errors.name && 'ring-red-500 focus:ring-red-500 dark:ring-red-500'
                         )}
                         {...register('name', { required: true })}
                       />
@@ -140,7 +146,6 @@ export default function Contact() {
                     <div className="mt-2.5">
                       <input
                         type="email"
-                        name="email"
                         id="email"
                         autoComplete="email"
                         placeholder="email@example.com"
@@ -162,7 +167,6 @@ export default function Contact() {
                     <div className="relative mt-2.5">
                       <input
                         type="tel"
-                        name="phone-number"
                         id="phone-number"
                         autoComplete="tel"
                         placeholder="04XX XXX XXX"
@@ -180,7 +184,6 @@ export default function Contact() {
                     </label>
                     <div className="mt-2.5">
                       <textarea
-                        name="message"
                         id="message"
                         rows={4}
                         placeholder="How may we be of service to you today?"
@@ -213,10 +216,10 @@ export default function Contact() {
             </div>
           ) : (
             <div key="lets-connect" className="transition-opacity duration-300 ease-out">
-              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Let's Connect!</h2>
+              <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">Lets Connect!</h2>
               <p className="mt-4">
-                Have a question or want to get in touch? Contact us now and we'll be happy to assist
-                you. We're here to help and look forward to hearing from you soon!
+                Have a question or want to get in touch? Contact us now and we will be happy to
+                assist you. We are here to help and look forward to hearing from you soon!
               </p>
               <dl className="mb-16 mt-16 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 sm:gap-y-16 lg:gap-x-8">
                 {features.map((feature, i) => (

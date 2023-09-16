@@ -5,7 +5,7 @@ import { MegaMenu } from '../megamenu/MegaMenu'
 import { megaMenuData } from '../../utils/data/siteData'
 
 export function Header({ onToggleNav }: { onToggleNav: () => void }) {
-  const [topPosition, setTopPosition] = useState<number>()
+  const [topPosition, setTopPosition] = useState<number>(0)
   const headerRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {

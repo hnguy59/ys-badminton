@@ -1,12 +1,9 @@
-import { Email, Facebook, Instagram, NearMe, Phone, WhatsApp, YouTube } from '@mui/icons-material'
-
-import Image from 'next/image'
-import { siteData } from '~/utils/data/siteData'
+import { Email, Facebook, Instagram, Phone, WhatsApp, YouTube } from '@mui/icons-material'
+import { siteData } from '../../utils/data/siteData'
 
 export function Footer() {
   const {
     name,
-    siteLogo,
     social: { email, facebook, instagram, phoneNumber },
   } = siteData
 
