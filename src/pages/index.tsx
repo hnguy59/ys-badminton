@@ -4,6 +4,7 @@ import { CTA } from '../components/CTA'
 import { useRef, useState, useEffect } from 'react'
 import { instagramSocialData } from '../utils/data/siteData'
 import { InstagramPost } from '../components/InstagramPost'
+import Script from 'next/script'
 
 export default function Home() {
   const [contentStartTop, setContentStartTop] = useState<number>()
@@ -134,10 +135,12 @@ export default function Home() {
             className="flex flex-col items-center justify-center gap-8 px-6 py-6 lg:px-8"
           >
             <h2 className="text-center text-[38px] font-black leading-[45px]">Follow us</h2>
-            <div className="flex flex-row gap-6">
+            <div className="flex w-full flex-row gap-6 overflow-auto">
               {instagramSocialData.map((post) => (
                 <InstagramPost key={post.href} href={post.href} hasCaption={true} />
               ))}
+
+              <Script src="https://www.instagram.com/embed.js"></Script>
             </div>
           </div>
           <CTA />
