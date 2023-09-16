@@ -85,7 +85,7 @@ export function MobileNav({ navShow, onToggleNav }: MobilNavProps) {
                     <ExpandMore className={activeMenu.includes(item.id) ? 'rotate-180' : ''} />
                   </span>
                   {activeMenu.includes(item.id) &&
-                    item.children.map((childItem) => {
+                    item.children?.map((childItem) => {
                       return (
                         <div key={childItem.id} className="pl-3">
                           <Link href={childItem.link}>
