@@ -10,6 +10,11 @@ export function ThemeSwitcher() {
   useEffect(() => setMounted(true), [])
   const isDark = theme === 'dark' || resolvedTheme === 'dark'
 
+  // TODO: Always light theme
+  useEffect(() => {
+    setTheme('light')
+  }, [setTheme])
+
   return (
     <button
       aria-label="Toggle Dark Mode"

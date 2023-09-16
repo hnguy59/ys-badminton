@@ -1,4 +1,4 @@
-import { ExpandLess, ExpandMore } from '@mui/icons-material'
+import { ExpandMore } from '@mui/icons-material'
 import { HTMLProps, useCallback, useEffect, useRef, useState } from 'react'
 
 import { Link } from '../Link'

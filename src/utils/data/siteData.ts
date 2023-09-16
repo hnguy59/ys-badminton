@@ -1,4 +1,5 @@
 import { IMegaMenu } from '../../components/megamenu/MegaMenu'
+import { FeatureCardType } from '../types'
 
 export interface ISiteData {
   name: string
@@ -49,111 +50,120 @@ export const siteData: ISiteData = {
 
 export const megaMenuData: IMegaMenu[] = [
   {
-    id: 'trainings',
-    title: 'Trainings',
+    id: 'training',
+    title: 'Training',
     hasChildren: true,
     children: [
-      { id: 'trainings-view', title: 'View Trainings', hasChildren: false, link: '/trainings' },
       {
         id: 'trainings-group',
         title: 'Group Training',
-        hasChildren: true,
-        children: [
-          {
-            id: 'trainings-group-view',
-            title: 'View Group Training',
-            hasChildren: false,
-            link: '/trainings/group',
-          },
-          {
-            id: 'trainings-group-kids',
-            title: 'Kids Training',
-            hasChildren: false,
-            link: '/trainings/group#kids',
-          },
-          {
-            id: 'trainings-group-holiday-camp',
-            title: 'School Holiday Camp Training',
-            hasChildren: false,
-            link: '/trainings/group#camp',
-          },
-          {
-            id: 'trainings-group-adults',
-            title: 'Adults Training',
-            hasChildren: false,
-            link: '/trainings/group#adults',
-          },
-        ],
+        hasChildren: false,
+        link: '/training/group',
       },
       {
         id: 'trainings-private',
         title: 'Private Training',
-        hasChildren: true,
-        children: [
-          {
-            id: 'trainings-private-view',
-            title: 'View Private Training',
-            hasChildren: false,
-            link: '/trainings/private',
-          },
-          {
-            id: 'trainings-private-1',
-            title: '1 on 1',
-            hasChildren: false,
-            link: '/trainings/private#1on1',
-          },
-          {
-            id: 'trainings-private-2',
-            title: '1 on 2',
-            hasChildren: false,
-            link: '/trainings/private#1on2',
-          },
-          {
-            id: 'trainings-private-3',
-            title: '1 on 3',
-            hasChildren: false,
-            link: '/trainings/private#1on3',
-          },
-        ],
+        hasChildren: false,
+        link: '/training/private',
       },
     ],
   },
-  {
-    id: 'products',
-    title: 'Products',
-    hasChildren: true,
-    children: [
-      { id: 'products-view', title: 'View Products', hasChildren: false, link: '/products' },
-      { id: 'products-ys', title: 'YS Badminton Shops', hasChildren: false, link: '/products#ys' },
-      { id: 'products-yonex', title: 'Yonex', hasChildren: false, link: '/products#yonex' },
-      { id: 'products-lining', title: 'Lining', hasChildren: false, link: '/products#lining' },
-    ],
-  },
-  { id: 'stringing', title: 'Stringing', hasChildren: false, link: '/stringing' },
+  { id: 'social', title: 'Social', hasChildren: false, link: '/social' },
   {
     id: 'team-ys',
     title: 'Team YS',
     hasChildren: true,
     children: [
-      { id: 'team-ys-view', title: 'View Team YS', hasChildren: false, link: '/teamys' },
       {
-        id: 'team-ys-players',
-        title: 'Competition Players',
+        id: 'about',
+        title: 'About',
         hasChildren: false,
-        link: '/team/players',
+        link: '/about',
       },
-      { id: 'team-ys-coaches', title: 'Coaches', hasChildren: false, link: '/teamys/coaches' },
+      {
+        id: 'team-ys-coaches',
+        title: 'Our Coaches',
+        hasChildren: false,
+        link: '/teamys/coaches',
+      },
+      { id: 'team-ys-staff', title: 'Our Staff', hasChildren: false, link: '/teamys/staff' },
     ],
   },
   { id: 'join-us', title: 'Join Us', hasChildren: false, link: '/joinus' },
   {
-    id: 'about',
-    title: 'About',
-    hasChildren: true,
-    children: [
-      { id: 'about-view', title: 'View About Us', hasChildren: false, link: '/about' },
-      { id: 'about-our-history', title: 'Our History', hasChildren: false, link: '/about/history' },
-      { id: 'about-contact', title: 'Contact', hasChildren: false, link: '/about/contact' },
-    ],
+    id: 'contact',
+    title: 'Contact',
+    hasChildren: false,
+    link: '/contact',
+  },
+]
+
+export const groupTrainingData: FeatureCardType[] = [
+  {
+    title: 'Kids training',
+    description: 'Kids training description',
+    timetable: 'Kids training timetable',
+    image: {
+      src: '/images/kids-training-group.jpg',
+      alt: 'Kids training group image',
+      width: 9999,
+      height: 9999,
+    },
+    link: '/',
+  },
+  {
+    title: 'Holiday Training',
+    description: 'Holiday training description',
+    timetable: 'Holiday training timetable',
+    image: {
+      src: '/images/kids-training-group.jpg',
+      alt: 'Kids training group image',
+      width: 9999,
+      height: 9999,
+    },
+    link: '/',
+  },
+  {
+    title: 'Adults Training',
+    description: 'Adults training description',
+    timetable: 'Adults training timetable',
+    image: {
+      src: '/images/kids-training-group.jpg',
+      alt: 'Kids training group image',
+      width: 9999,
+      height: 9999,
+    },
+    link: '/',
+  },
+]
+
+export const privateTrainingData: FeatureCardType[] = [
+  {
+    title: 'Kids training',
+    description: 'Kids training description',
+    timetable: 'Kids training timetable',
+    image: {
+      src: '/images/kids-training-group.jpg',
+      alt: 'Kids training group image',
+      width: 9999,
+      height: 9999,
+    },
+    link: '/',
+  },
+]
+
+export interface IInstagramSocial {
+  href: string
+}
+
+export const instagramSocialData: IInstagramSocial[] = [
+  {
+    href: 'https://www.instagram.com/p/CwmvwOQuM4T/?utm_source=ig_embed&amp;utm_campaign=loading',
+  },
+  {
+    href: 'https://www.instagram.com/p/CwxAqErvLxy/?utm_source=ig_embed&amp;utm_campaign=loading',
+  },
+  {
+    href: 'https://www.instagram.com/p/CwhWKFYt6d1/?utm_source=ig_embed&amp;utm_campaign=loading',
   },
 ]

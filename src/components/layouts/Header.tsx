@@ -2,11 +2,11 @@ import { useEffect, useRef, useState } from 'react'
 
 import { Link } from '../Link'
 import { MegaMenu } from '../megamenu/MegaMenu'
-import { ThemeSwitcher } from '../ThemeSwitcher'
 import { megaMenuData } from '../../utils/data/siteData'
+import { ThemeSwitcher } from '../ThemeSwitcher'
 
 export function Header({ onToggleNav }: { onToggleNav: () => void }) {
-  const [topPosition, setTopPosition] = useState<number>()
+  const [topPosition, setTopPosition] = useState<number>(0)
   const headerRef = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {

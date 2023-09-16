@@ -1,40 +1,58 @@
-![tailwind-nextjs-banner](/public/images/twitter-card.png)
+### TODO v2.0.1
+(2 weeks from 30/8)
+PRODUCT (DONE)
+- Remove products and all children
 
-# Tailwind Nextjs Starter Blog
+HOME PAGE
+- Welcome + hero image photo
+  - We play the best. -> we push the limit
+- 2 buttons side by side (private training, group training) (goes to page)
+- Similar to vSmashba.com
+- (Where talents gather) -> we push the limit
+- Our badminton court -> This is our social
+- Our customer -> current instagram posts (recent 3)
 
-https://ylrealty.com.au/contact-us
-volantbadminton.com
+MEGA MENU (DONE)
+- Remove view Trainings
+- Remove children/children of group/private training
 
-Products
-- for future
-Events
-- for future
+TRAININGS (DONE)
+- Type training #1
+  - Title
+  - Time
+  - Description
+  - Enquiry
+- Type training #2
+- Private training
 
-FB: https://www.facebook.com/YSBadmintonTraining
-INST: https://www.instagram.com/ysbadminton/
-Email: ysbt.contact@gmail.com
+STRINGING/SOCIAL (DONE)
+- Change to Social 
+- Format
+  - Location
+  - Time
+  - Descipriton
+  - Enquiry
 
-text whatever
+TEAM YS (DONE)
+- Our Coaches (option)
+- Our Staff (option)
 
-contact us form
-- Name
-- Message
--> send these details to 0452298126
+JOIN US
+- About hiring, interest in joining
+- CV section
 
+### v2.0.0
 
-TODO: TWILIO link mobile number (ph: +13613458966)
-
-
-### TODO
 YS BAMDINTON
 (Due - 6 weeks from 10/7/2022)
 
 (DONE) Take off picture from home page
+
 - Domain = ysbadminton.com
-(DONE) Banner = ‘Badminton Training | Badminton Products’ instead of Kids School Holiday Camp
-(DONE) Footer (copy Vsmash vsmashba.com)
+  (DONE) Banner = ‘Badminton Training | Badminton Products’ instead of Kids School Holiday Camp
+  (DONE) Footer (copy Vsmash vsmashba.com)
 - Hero to 3/4 categories (home page volant volant.com, world gym)
-(DONE) Mega menu
+  (DONE) Mega menu
 - 3rd party
 - Hero Image, (multiple image, scroll)
 - Category
@@ -53,7 +71,7 @@ YS BAMDINTON
     - Yonex
     - Lining
   - STRINGING (Photo + text)
-  - TEAM YS 
+  - TEAM YS
     - Competition Players
     - Coaches
   - JOIN US
@@ -62,3 +80,28 @@ YS BAMDINTON
     - Our History
     - Contact
 
+
+### v1.0.0
+
+https://ylrealty.com.au/contact-us
+volantbadminton.com
+
+Products
+
+- for future
+  Events
+- for future
+
+FB: https://www.facebook.com/YSBadmintonTraining
+INST: https://www.instagram.com/ysbadminton/
+Email: ysbt.contact@gmail.com
+
+text whatever
+
+contact us form
+
+- Name
+- Message
+  -> send these details to 0452298126
+
+TODO: TWILIO link mobile number (ph: +13613458966)

@@ -1,5 +1,4 @@
 import type { AnchorHTMLAttributes } from 'react'
-/* eslint-disable jsx-a11y/anchor-has-content */
 import NextLink from 'next/link'
 
 export function Link({ href, ...rest }: AnchorHTMLAttributes<HTMLAnchorElement>) {

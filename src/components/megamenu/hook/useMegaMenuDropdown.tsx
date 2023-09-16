@@ -1,14 +1,4 @@
-import {
-  Dispatch,
-  HTMLProps,
-  ReactElement,
-  SetStateAction,
-  useCallback,
-  useEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react'
+import { ReactElement, useMemo } from 'react'
 
 import { IMegaMenu } from '../MegaMenu'
 import { Link } from '../../Link'
@@ -21,7 +11,7 @@ export interface UseMegaMenuDropdownProps {
 }
 
 export interface UseMegaMenuDropdown {
-  activeSubMenuElement: ReactElement
+  activeSubMenuElement: ReactElement | null
 }
 
 export function useMegaMenuDropdown({
@@ -35,7 +25,7 @@ export function useMegaMenuDropdown({
   )
 
   const activeSubMenuElement = useMemo(() => {
-    return activeMegaMenu ? (
+    return activeMegaMenu?.children ? (
       <div className="relative h-fit border-l border-gray-200 dark:border-gray-700">
         <div className="flex w-full flex-[2] flex-col">
           {activeMegaMenu.children.map((item) => {
