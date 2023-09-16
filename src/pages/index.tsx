@@ -39,12 +39,12 @@ export default function Home() {
         <div className="absolute left-0 top-0 z-10 flex h-full max-h-[1440px] w-full items-end justify-center">
           <div className="flex justify-evenly gap-12 p-24">
             <Link href="/training/private">
-              <button className="rounded-l-full bg-white p-5 text-3xl font-bold text-dark hover:bg-dark hover:text-white dark:bg-dark dark:text-white">
+              <button className="rounded-l-full bg-white p-5 text-3xl font-bold text-dark hover:bg-dark hover:text-white dark:bg-dark dark:text-white hover:dark:bg-white hover:dark:text-dark">
                 PRIVATE TRAINING
               </button>
             </Link>
             <Link href="/training/group">
-              <button className="rounded-r-full bg-white p-5 text-3xl font-bold text-dark hover:bg-dark hover:text-white dark:bg-dark dark:text-white">
+              <button className="rounded-r-full bg-white p-5 text-3xl font-bold text-dark hover:bg-dark hover:text-white dark:bg-dark dark:text-white hover:dark:bg-white hover:dark:text-dark">
                 GROUP TRAINING
               </button>
             </Link>
@@ -114,7 +114,7 @@ export default function Home() {
           {/* SOCIALS */}
           <div
             id="socials"
-            className="flex flex-col items-center justify-center gap-8 rounded bg-pink-50 px-6 py-6 lg:px-8"
+            className="flex flex-col items-center justify-center gap-8 rounded bg-pink-50 dark:bg-dark px-6 py-6 lg:px-8"
           >
             <h2 className="text-center text-[38px] font-black leading-[45px]">Socials</h2>
             <p className="text-center text-[20px]">

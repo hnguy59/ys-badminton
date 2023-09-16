@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from '../Link'
 import { MegaMenu } from '../megamenu/MegaMenu'
 import { megaMenuData } from '../../utils/data/siteData'
+import { ThemeSwitcher } from '../ThemeSwitcher'
 
 export function Header({ onToggleNav }: { onToggleNav: () => void }) {
   const [topPosition, setTopPosition] = useState<number>(0)
@@ -53,7 +54,7 @@ export function Header({ onToggleNav }: { onToggleNav: () => void }) {
         </div>
         <div className="flex items-center text-base leading-5">
           <MegaMenu megaMenuData={megaMenuData} topPosition={topPosition} />
-          {/* <ThemeSwitcher /> */}
+          <ThemeSwitcher />
           <button
             className="ml-2 mr-1 h-8 w-8 rounded sm:hidden"
             type="button"
