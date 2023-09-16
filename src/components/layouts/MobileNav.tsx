@@ -101,7 +101,7 @@ export function MobileNav({ navShow, onToggleNav }: MobilNavProps) {
             if (item.link) {
               return (
                 <li key={item.id}>
-                  <Link href={item.link}>
+                  <Link href={item.link} onClick={onToggleNav}>
                     <span className={className}>{item.title}</span>
                   </Link>
                 </li>
@@ -115,17 +115,6 @@ export function MobileNav({ navShow, onToggleNav }: MobilNavProps) {
             )
           })}
         </ul>
-        {/* {headerNavLinks.map((link) => (
-          <div key={link.title} className="px-8 py-4">
-            <Link
-              href={link.href}
-              className="text-2xl font-semibold tracking-wide text-gray-900 dark:text-gray-100"
-              onClick={onToggleNav}
-            >
-              {link.title}
-            </Link>
-          </div>
-        ))} */}
       </nav>
     </div>
   )

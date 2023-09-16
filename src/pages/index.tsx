@@ -38,7 +38,7 @@ export default function Home() {
           </h1>
         </div>
         <div className="absolute left-0 top-0 z-10 flex h-full max-h-[1440px] w-full items-end justify-center">
-          <div className="flex justify-evenly gap-12 p-24">
+          <div className="flex justify-evenly gap-12 pb-24">
             <Link href="/training/private">
               <button className="rounded-l-full bg-white p-5 text-3xl font-bold text-dark hover:bg-dark hover:text-white dark:bg-dark dark:text-white hover:dark:bg-white hover:dark:text-dark">
                 PRIVATE TRAINING
