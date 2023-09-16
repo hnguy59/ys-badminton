@@ -53,7 +53,7 @@ export function MegaMenu({ megaMenuData, topPosition, ...props }: MegaMenuProps)
   }, [router, setActiveMenu])
 
   return (
-    <nav {...props} ref={ref}>
+    <nav {...props} ref={ref} className="hidden lg:block">
       <div className="relative">
         <ul className="flex flex-row items-center gap-4">
           {megaMenuData.map((item) => {

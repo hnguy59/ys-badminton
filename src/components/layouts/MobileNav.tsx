@@ -1,16 +1,45 @@
 import clsx from 'clsx'
-import { MouseEventHandler } from 'react'
+import { useState, useCallback, useEffect } from 'react'
+import { megaMenuData } from '../../utils/data/siteData'
+import { ExpandMore } from '@mui/icons-material'
+import { useRouter } from 'next/router'
+import { Link } from '../Link'
 
 interface MobilNavProps {
   navShow: boolean
-  onToggleNav: MouseEventHandler<HTMLButtonElement>
+  onToggleNav: () => void
 }
 
 export function MobileNav({ navShow, onToggleNav }: MobilNavProps) {
   const className = clsx(
-    `sm:hidden fixed w-full h-screen inset-0 bg-gray-200 dark:bg-gray-800 opacity-1 z-50 transition-transform transform ease-in-out duration-300`,
+    `lg:hidden fixed w-full h-screen inset-0 bg-gray-200 dark:bg-gray-800 opacity-1 z-50 transition-transform transform ease-in-out duration-300`,
     navShow ? 'translate-x-0' : 'translate-x-full'
   )
+  const router = useRouter()
+  const [activeMenu, setActiveMenu] = useState<string[]>([])
+
+  const handleClickDropdown = useCallback((id: string) => {
+    setActiveMenu((prev) => {
+      if (prev.includes(id)) {
+        return prev.filter((e) => e !== id)
+      }
+
+      return [...prev, id]
+    })
+  }, [])
+
+  useEffect(() => {
+    setActiveMenu([])
+  }, [onToggleNav, router, setActiveMenu])
+
+  const homeClassNames = clsx(
+    'inline-block rounded text-3xl font-medium text-gray-900 hover:cursor-pointer dark:text-gray-100 py-1 px-2 sm:py-2 sm:px-3',
+    router.pathname === '/'
+      ? 'bg-gray-200/50 dark:bg-gray-700/50'
+      : 'hover:bg-gray-200/50 dark:hover:bg-gray-700/50',
+    activeMenu.includes('home') ? 'bg-gray-200/50 dark:bg-gray-700/50' : ''
+  )
+
   return (
     <div className={className}>
       <button
@@ -32,7 +61,60 @@ export function MobileNav({ navShow, onToggleNav }: MobilNavProps) {
           />
         </svg>
       </button>
-      <nav className="fixed mt-8 h-full">
+      <nav className="fixed mt-16 h-full w-full p-4">
+        <ul className="flex flex-col gap-8">
+          <li>
+            <Link href="/">
+              <span className={homeClassNames}>Home</span>
+            </Link>
+          </li>
+          {megaMenuData.map((item) => {
+            const className = clsx(
+              'inline-block rounded text-3xl font-medium text-gray-900 hover:cursor-pointer dark:text-gray-100 py-1 px-2 sm:py-2 sm:px-3',
+              router.pathname === item.link
+                ? 'bg-gray-200/50 dark:bg-gray-700/50'
+                : 'hover:bg-gray-200/50 dark:hover:bg-gray-700/50',
+              activeMenu.includes(item.id) ? 'bg-gray-200/50 dark:bg-gray-700/50' : ''
+            )
+
+            if (item.hasChildren) {
+              return (
+                <li key={item.id}>
+                  <span className={className} onClick={() => handleClickDropdown(item.id)}>
+                    {item.title}
+                    <ExpandMore className={activeMenu.includes(item.id) ? 'rotate-180' : ''} />
+                  </span>
+                  {activeMenu.includes(item.id) &&
+                    item.children.map((childItem) => {
+                      return (
+                        <div key={childItem.id} className="pl-3">
+                          <Link href={childItem.link}>
+                            <span className={clsx(className, 'text-xl')}>{childItem.title}</span>
+                          </Link>
+                        </div>
+                      )
+                    })}
+                </li>
+              )
+            }
+
+            if (item.link) {
+              return (
+                <li key={item.id}>
+                  <Link href={item.link}>
+                    <span className={className}>{item.title}</span>
+                  </Link>
+                </li>
+              )
+            }
+
+            return (
+              <li key={item.id}>
+                <span className={className}>{item.title}</span>
+              </li>
+            )
+          })}
+        </ul>
         {/* {headerNavLinks.map((link) => (
           <div key={link.title} className="px-8 py-4">
             <Link

@@ -1,12 +1,18 @@
+import { useRouter } from 'next/router'
 import { Banner } from './Banner'
 import { Footer } from './Footer'
 import { Header } from './Header'
 import { MobileNav } from './MobileNav'
-import { ReactNode, useState } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 
 export function LayoutWrapper({ children }: { children: ReactNode }) {
   const [navShow, setNavShow] = useState(false)
   const onToggleNav = () => setNavShow((status) => !status)
+  const router = useRouter()
+
+  useEffect(() => {
+    setNavShow(false)
+  }, [router.pathname])
 
   return (
     <>

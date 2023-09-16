@@ -56,7 +56,7 @@ export function Header({ onToggleNav }: { onToggleNav: () => void }) {
           <MegaMenu megaMenuData={megaMenuData} topPosition={topPosition} />
           <ThemeSwitcher />
           <button
-            className="ml-2 mr-1 h-8 w-8 rounded sm:hidden"
+            className="ml-2 mr-1 h-8 w-8 rounded lg:hidden"
             type="button"
             aria-label="Toggle Menu"
             onClick={onToggleNav}
