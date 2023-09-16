@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from 'react'
 
 import { Link } from '../Link'
 import { MegaMenu } from '../megamenu/MegaMenu'
-import { ThemeSwitcher } from '../ThemeSwitcher'
 import { megaMenuData } from '../../utils/data/siteData'
 
 export function Header({ onToggleNav }: { onToggleNav: () => void }) {
@@ -54,7 +53,7 @@ export function Header({ onToggleNav }: { onToggleNav: () => void }) {
         </div>
         <div className="flex items-center text-base leading-5">
           <MegaMenu megaMenuData={megaMenuData} topPosition={topPosition} />
-          <ThemeSwitcher />
+          {/* <ThemeSwitcher /> */}
           <button
             className="ml-2 mr-1 h-8 w-8 rounded sm:hidden"
             type="button"

@@ -5,7 +5,11 @@ import React, {
   useState,
   type KeyboardEvent as ReactKeyboardEvent,
 } from 'react'
-import type { ImageLightBoxProps } from '~/utils/types'
+import { ImageProps as NextImageProps } from 'next/image'
+
+export interface ImageLightBoxProps extends Pick<NextImageProps, 'src'> {
+  closeLightbox: () => void
+}
 
 export function ImageLightbox({ src, closeLightbox }: ImageLightBoxProps) {
   const { theme } = useTheme()

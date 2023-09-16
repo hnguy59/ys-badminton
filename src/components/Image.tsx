@@ -1,8 +1,12 @@
 import { ImageLightbox } from './ImageLightbox'
-import type { ImageProps } from '~/utils/types'
 import NextImage from 'next/image'
 import clsx from 'clsx'
 import { useState } from 'react'
+import type { ImageProps as NextImageProps } from 'next/image'
+
+export interface ImageProps extends NextImageProps {
+  shouldOpenLightbox?: boolean
+}
 
 export function Image({ shouldOpenLightbox = true, ...rest }: ImageProps) {
   const [openLightbox, setOpenLightbox] = useState(false)

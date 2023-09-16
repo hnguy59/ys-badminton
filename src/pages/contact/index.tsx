@@ -1,10 +1,10 @@
 import { Email, Facebook, Instagram, Phone } from '@mui/icons-material'
 
 import { CircularProgress } from '@mui/material'
-import { Image } from '~/components/Image'
+import { Image } from '../../components/Image'
 import Link from 'next/link'
 import clsx from 'clsx'
-import { siteData } from '~/utils/data/siteData'
+import { siteData } from '../../utils/data/siteData'
 import { toast } from 'react-toastify'
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'

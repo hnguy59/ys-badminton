@@ -5,14 +5,6 @@ export interface PageTitleProps {
   children: ReactNode
 }
 
-export interface ImageLightBoxProps extends Pick<NextImageProps, 'src'> {
-  closeLightbox: () => void
-}
-
-export interface ImageProps extends NextImageProps {
-  shouldOpenLightbox?: boolean
-}
-
 export interface SocialButtonsProps {
   postUrl: string
   title: string
