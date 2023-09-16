@@ -78,7 +78,7 @@ export const megaMenuData: IMegaMenu[] = [
         id: 'about',
         title: 'About',
         hasChildren: false,
-        link: '/about',
+        link: '/teamys/about',
       },
       {
         id: 'team-ys-coaches',
