@@ -1,8 +1,7 @@
-import { ArrowDownward, School, Star, VerifiedUser } from '@mui/icons-material'
-
+import { ArrowDownward } from '@mui/icons-material'
+import { CTA } from '../../components/CTA'
 import { Image } from '../../components/Image'
 import Link from 'next/link'
-import { CTA } from '../../components/CTA'
 
 export default function AboutUs() {
   return (
@@ -11,7 +10,7 @@ export default function AboutUs() {
       touch (contact us) */}
       <div id="our-vision" className="mx-auto flex flex-col items-center justify-center gap-8 ">
         <h1 className="text-center font-bold text-indigo-700 dark:text-indigo-300">About Us</h1>
-        <h2 className="-mt-4 text-center text-3xl font-bold leading-6">We play the best</h2>
+        <h2 className="-mt-4 text-center text-3xl font-bold leading-6">Push your Limit!</h2>
         <ArrowDownward className="h-8 w-8" />
         <div className="flex flex-col gap-8 sm:flex-row">
           <div className="h-min flex-1">
@@ -26,9 +25,13 @@ export default function AboutUs() {
           <div className="flex flex-[2] flex-col justify-center gap-4">
             <h3 className="text-3xl font-bold">Our Vision</h3>
             <p className="text-justify">
-              To inspire and empower individuals to become skilled and confident badminton players.
-              We aim to cultivate a love for the sport, nurture talent, and create a community of
-              athletes who excel both on and off the court.
+              Growing up in Malaysia, Suen&apos;s journey in badminton began with systematic
+              training at a young age, culminating in professional play across various states. Even
+              upon relocating to Brisbane, his fervour for the sport remained unwavering. In the
+              initial stages, Suen extended his love for badminton by engaging in sparring sessions
+              with members of the Australian National team. His dedication also led him to offer
+              invaluable advice to friends seeking to improve their badminton skills. This
+              commitment to the sport and its community underscores the foundation of YS Badminton.
             </p>
           </div>
         </div>
@@ -49,42 +52,53 @@ export default function AboutUs() {
           </div>
           <div className="mx-auto">
             <div className="mx-auto flex flex-col-reverse gap-x-10 gap-y-16 sm:gap-y-20 lg:mx-0 lg:flex-row">
-              <div className="flex w-full flex-col items-center justify-center gap-8 sm:flex-row lg:flex-row">
+              <div className="flex w-full flex-col items-center justify-center gap-8">
                 <div className="">
-                  <h3 className="text-3xl font-bold">Our Values</h3>
-                  <dl className="mt-10  space-y-8 text-base leading-7">
-                    <div className="relative pl-9">
-                      <dt className="inline font-semibold">
-                        <Star className="absolute left-1 top-1 h-5 w-5 text-indigo-600 dark:text-green-400" />
-                        Excellence
-                      </dt>{' '}
-                      <dd className="text-justify">
-                        We are committed to providing top-quality coaching programs led by
-                        experienced professionals, ensuring our players receive excellent guidance
-                        and support.
-                      </dd>
-                    </div>
-                    <div className="relative pl-9">
-                      <dt className="inline font-semibold">
-                        <VerifiedUser className="absolute left-1 top-1 h-5 w-5 text-indigo-600 dark:text-green-400" />
-                        Integrity
-                      </dt>{' '}
-                      <dd className="text-justify">
-                        We prioritize integrity, fair play, and respect for opponents, fostering a
-                        culture of good character on and off the court.
-                      </dd>
-                    </div>
-                    <div className="relative pl-9">
-                      <dt className="inline font-semibold">
-                        <School className="absolute left-1 top-1 h-5 w-5 text-indigo-600 dark:text-green-400" />
-                        Personal Growth
-                      </dt>{' '}
-                      <dd className="text-justify">
-                        We foster holistic player development, nurturing growth, resilience, and
-                        confidence, empowering individuals with life skills beyond badminton.
-                      </dd>
-                    </div>
-                  </dl>
+                  <h3 className="text-3xl font-bold">About Us</h3>
+                  <p className="text-justify">
+                    Our founder Yi Suen Kaw officially establishes YS Badminton in 2018 at Brisbane,
+                    throughout the past 5 years, Suen has led to the formation of a dedicated team
+                    of passionate and qualified badminton coaches in Brisbane. Together, they have
+                    been offering private session to individual, as well as Adults and Kids Group
+                    training, catering all ages and skill levels that possible. We also run weekly
+                    social sessions for our students and other badminton lovers in the community.
+                    Our team&apos;s unwavering commitment lies in imparting the utmost expertise in
+                    badminton techniques and skills to our students. This collective dedication
+                    empowers our students to elevate their badminton proficiency and reach new
+                    heights in their gameplay and aspirations, for example participating Queensland
+                    Badminton Association and other higher state competitions.
+                  </p>
+                </div>
+                <div className="">
+                  <h3 className="text-3xl font-bold">Push your Limit!</h3>
+                  <p className="text-justify">
+                    &quot;Push The Limits&quot; is a core belief at YS Badminton, encouraging each
+                    student to transcend their boundaries. By adopting this philosophy and mastering
+                    advanced techniques, our students can surpass even their highest aspirations,
+                    achieving extraordinary outcomes that exceed the norm.
+                  </p>
+                </div>
+                <div className="">
+                  <h3 className="text-3xl font-bold">Contribute to Our Community</h3>
+                  <p className="text-justify">
+                    In the past year, YS Badminton has been immensely grateful for the trust
+                    bestowed upon us by our students and the recognition and support from the
+                    community. Notably, we had the privilege to coach the Badminton team at Brisbane
+                    Girls Grammar School from 2019 to 2020, which resulted in the team achieving two
+                    championship victories. Furthermore, we are delighted to share that Suen&apos;s
+                    expertise has led him to be invited as the coach for the University of
+                    Queensland (UQ) Badminton National Team for the year 2023. In this role, Suen is
+                    dedicated to equipping and advancing the skills and techniques of the students,
+                    enhancing their proficiency in badminton to participate in upcoming games across
+                    Australia.
+                  </p>
+                  <br />
+                  <p className="text-justify">
+                    We are deeply honoured to play a role in the growth and triumphs of these
+                    aspiring badminton players. Our commitment to sharing our expertise in
+                    techniques and skills remains steadfast, ensuring all our players receive the
+                    best.
+                  </p>
                 </div>
               </div>
               <div className="flex w-full flex-col items-center justify-evenly gap-8">

@@ -1,3 +1,5 @@
+import React, { ReactElement, ReactNode } from 'react'
+
 import { ImageProps } from 'next/image'
 
 export interface Project {
@@ -12,8 +14,8 @@ export interface Project {
 
 export interface FeatureCardType {
   title: string
-  description: string
-  image: ImageProps
+  description: ReactElement
+  image?: ImageProps
   link?: string
-  timetable: string
+  timetable: ReactElement
 }
