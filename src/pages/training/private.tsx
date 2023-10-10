@@ -1,4 +1,3 @@
-import { FeatureCardGroup } from '../../components/FeatureCardGroup'
 import { ImageWithCTA } from '../../components/ImageWithCTA'
 import { privateTrainingData } from '../../utils/data/siteData'
 

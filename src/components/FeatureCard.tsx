@@ -1,5 +1,5 @@
-import Image from 'next/image'
 import { FeatureCardType } from '../utils/types'
+import Image from 'next/image'
 import Link from 'next/link'
 
 interface FeatureCardProps {
@@ -7,9 +7,17 @@ interface FeatureCardProps {
 }
 
 export function FeatureCard({ feature }: FeatureCardProps) {
+  const { src, alt } = { ...feature.image }
+
   return (
     <div className="flex h-fit min-w-[150px] flex-1 flex-col gap-2 rounded-xl bg-white/90 p-4 shadow-lg dark:bg-gray-700/90">
-      <Image className="flex h-1/3 min-h-[50px] items-center justify-center" {...feature.image} />
+      {src && alt && (
+        <Image
+          className="flex h-1/3 min-h-[50px] items-center justify-center"
+          src={src}
+          alt={alt}
+        />
+      )}
       <div className="text-2xl font-semibold">{feature.title}</div>
       <div>{feature.description}</div>
       {feature.link && (

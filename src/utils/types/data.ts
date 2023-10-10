@@ -1,6 +1,5 @@
-import React, { ReactElement, ReactNode } from 'react'
-
 import { ImageProps } from 'next/image'
+import { ReactElement } from 'react'
 
 export interface Project {
   type: 'work' | 'self'

@@ -1,4 +1,4 @@
-import { Divider, List, ListItem, ListItemIcon, ListItemText } from '@mui/material'
+import { List, ListItem, ListItemIcon, ListItemText } from '@mui/material'
 
 import { EmojiEvents } from '@mui/icons-material'
 import { FeatureCardType } from '../types'
