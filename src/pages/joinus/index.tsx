@@ -1,17 +1,17 @@
 import { CircularProgress, Divider } from '@mui/material'
+import { SubmitHandler, useForm } from 'react-hook-form'
 
+import { Image } from '../../components/Image'
 import clsx from 'clsx'
 import { toast } from 'react-toastify'
-import { SubmitHandler, useForm } from 'react-hook-form'
 import { useState } from 'react'
-import { Image } from '../../components/Image'
 
 interface FormValues {
-  email: string;
-  firstName: string;
+  email: string
+  firstName: string
   lastName: string
-  phoneNumber: string;
-  message: string;
+  phoneNumber: string
+  message: string
 }
 
 export default function JoinUs() {

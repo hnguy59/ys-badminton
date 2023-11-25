@@ -245,7 +245,7 @@ export interface IInstagramSocial {
 
 export const instagramSocialData: IInstagramSocial[] = [
   {
-    href: 'https://www.instagram.com/p/CwxAqErvLxy/?utm_source=ig_embed&amp;utm_campaign=loading',
+    href: 'https://www.instagram.com/p/C0DBleHyN24/?utm_source=ig_embed&amp;utm_campaign=loading',
   },
   {
     href: 'https://www.instagram.com/p/CwmvwOQuM4T/?utm_source=ig_embed&amp;utm_campaign=loading',
